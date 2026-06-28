@@ -48,9 +48,9 @@ https://bahari-shop-admin.vercel.app
 ### Demo Admin
 
 | Field    | Value           |
-|----------|-----------------|
-| Email    | admin@gmail.com  |
-| Password | Password@123       |
+| -------- | --------------- |
+| Email    | admin@gmail.com |
+| Password | Password@123    |
 
 ---
 
@@ -78,15 +78,15 @@ The platform handles the full lifecycle of an e-commerce business: product catal
 
 ### Customer Storefront
 
-> *[Screenshot: Customer-facing homepage — hero banners, featured sections, deals, and product grid]*
+> _[Screenshot: Customer-facing homepage — hero banners, featured sections, deals, and product grid]_
 
-![Frontend Screenshot]('https://i.ibb.co.com/hFxvYw79/Screenshot-2026-06-28-073312.png')
+![Frontend Screenshot](https://i.ibb.co.com/hFxvYw79/Screenshot-2026-06-28-073312.png)
 
 ### Admin Dashboard
 
-> *[Screenshot: Admin dashboard — analytics overview, order management, and reporting interface]*
+> _[Screenshot: Admin dashboard — analytics overview, order management, and reporting interface]_
 
-![Admin Screenshot]('https://i.ibb.co.com/8nSGn0RC/Screenshot-2026-06-28-073548.png')
+![Admin Screenshot](https://i.ibb.co.com/8nSGn0RC/Screenshot-2026-06-28-073548.png)
 
 ---
 
@@ -262,70 +262,70 @@ bahari-shop-ecommerce/
 
 ### Backend — NestJS 11
 
-| Category | Technology | Version | Purpose |
-|----------|-----------|---------|---------|
-| Framework | NestJS | 11.x | Modular Node.js framework |
-| Language | TypeScript | 5.7 | Type-safe development |
-| Database | PostgreSQL | 16 | Primary relational database |
-| ORM | TypeORM | 0.3.x | Database abstraction & schema sync |
-| Cache | Redis + `@keyv/redis` | 7.x | Response caching & sessions |
-| Job Queue | BullMQ + `@nestjs/bullmq` | 5.x | Async background job processing |
-| Auth | JWT + Passport | — | Stateless authentication |
-| Validation | class-validator + class-transformer | 0.14 | DTO validation pipeline |
-| API Docs | Swagger / OpenAPI | 11.x | Auto-generated API documentation |
-| Email | Nodemailer | 7.x | Transactional email delivery |
-| Push Notifications | Firebase Admin SDK | 13.x | FCM push notifications |
-| OAuth | google-auth-library | 10.x | Google Sign-In verification |
-| Image CDN | ImageKit | 6.x | Image upload, transform & CDN |
-| File Storage | AWS S3 SDK | 3.x | Binary file storage |
-| Image Processing | Sharp | 0.34 | Server-side image resizing |
-| Security | Helmet | 8.x | HTTP security headers |
-| HTTP Client | Axios | 1.x | External API calls (CAPI, courier) |
-| Scheduler | `@nestjs/schedule` | 6.x | Cron jobs (inventory cleanup) |
-| ID Generation | nanoid | 5.x | Short unique IDs |
-| Slug | slugify | 1.6 | URL-friendly slugs |
-| IP Detection | request-ip | 3.x | Client IP for fraud detection |
-| User Agent | ua-parser-js | 2.x | Device/browser detection |
+| Category           | Technology                          | Version | Purpose                            |
+| ------------------ | ----------------------------------- | ------- | ---------------------------------- |
+| Framework          | NestJS                              | 11.x    | Modular Node.js framework          |
+| Language           | TypeScript                          | 5.7     | Type-safe development              |
+| Database           | PostgreSQL                          | 16      | Primary relational database        |
+| ORM                | TypeORM                             | 0.3.x   | Database abstraction & schema sync |
+| Cache              | Redis + `@keyv/redis`               | 7.x     | Response caching & sessions        |
+| Job Queue          | BullMQ + `@nestjs/bullmq`           | 5.x     | Async background job processing    |
+| Auth               | JWT + Passport                      | —       | Stateless authentication           |
+| Validation         | class-validator + class-transformer | 0.14    | DTO validation pipeline            |
+| API Docs           | Swagger / OpenAPI                   | 11.x    | Auto-generated API documentation   |
+| Email              | Nodemailer                          | 7.x     | Transactional email delivery       |
+| Push Notifications | Firebase Admin SDK                  | 13.x    | FCM push notifications             |
+| OAuth              | google-auth-library                 | 10.x    | Google Sign-In verification        |
+| Image CDN          | ImageKit                            | 6.x     | Image upload, transform & CDN      |
+| File Storage       | AWS S3 SDK                          | 3.x     | Binary file storage                |
+| Image Processing   | Sharp                               | 0.34    | Server-side image resizing         |
+| Security           | Helmet                              | 8.x     | HTTP security headers              |
+| HTTP Client        | Axios                               | 1.x     | External API calls (CAPI, courier) |
+| Scheduler          | `@nestjs/schedule`                  | 6.x     | Cron jobs (inventory cleanup)      |
+| ID Generation      | nanoid                              | 5.x     | Short unique IDs                   |
+| Slug               | slugify                             | 1.6     | URL-friendly slugs                 |
+| IP Detection       | request-ip                          | 3.x     | Client IP for fraud detection      |
+| User Agent         | ua-parser-js                        | 2.x     | Device/browser detection           |
 
 ### Customer Frontend — Next.js 16
 
-| Category | Technology | Version | Purpose |
-|----------|-----------|---------|---------|
-| Framework | Next.js | 16.1.6 | SSR + SSG + App Router |
-| UI Library | React | 19.2 | Component model |
-| Styling | TailwindCSS | 4.x | Utility-first CSS |
-| State | Redux Toolkit | 2.x | Global state management |
-| API Layer | RTK Query | — | Data fetching, caching, mutations |
-| Persistence | redux-persist | 6.x | Cart & auth state persistence |
-| HTTP | Axios | 1.x | API communication |
-| Forms | React Hook Form + Zod | 7.x / 4.x | Form validation |
-| Animations | Framer Motion | 12.x | Page & component animations |
-| Carousel | Swiper.js | 12.x | Product sliders |
-| Charts | Recharts | 3.x | Data visualization |
-| Notifications | React Hot Toast | 2.x | Toast notifications |
-| Icons | Lucide React + React Icons | — | Icon library |
-| Auth | `@react-oauth/google` | 0.13 | Google OAuth popup |
-| Push | Firebase | 12.x | FCM client-side |
-| Cookies | js-cookie | 3.x | UTM param persistence |
+| Category      | Technology                 | Version   | Purpose                           |
+| ------------- | -------------------------- | --------- | --------------------------------- |
+| Framework     | Next.js                    | 16.1.6    | SSR + SSG + App Router            |
+| UI Library    | React                      | 19.2      | Component model                   |
+| Styling       | TailwindCSS                | 4.x       | Utility-first CSS                 |
+| State         | Redux Toolkit              | 2.x       | Global state management           |
+| API Layer     | RTK Query                  | —         | Data fetching, caching, mutations |
+| Persistence   | redux-persist              | 6.x       | Cart & auth state persistence     |
+| HTTP          | Axios                      | 1.x       | API communication                 |
+| Forms         | React Hook Form + Zod      | 7.x / 4.x | Form validation                   |
+| Animations    | Framer Motion              | 12.x      | Page & component animations       |
+| Carousel      | Swiper.js                  | 12.x      | Product sliders                   |
+| Charts        | Recharts                   | 3.x       | Data visualization                |
+| Notifications | React Hot Toast            | 2.x       | Toast notifications               |
+| Icons         | Lucide React + React Icons | —         | Icon library                      |
+| Auth          | `@react-oauth/google`      | 0.13      | Google OAuth popup                |
+| Push          | Firebase                   | 12.x      | FCM client-side                   |
+| Cookies       | js-cookie                  | 3.x       | UTM param persistence             |
 
 ### Admin Dashboard — Vite + React 19
 
-| Category | Technology | Version | Purpose |
-|----------|-----------|---------|---------|
-| Build Tool | Vite | 7.x | Fast HMR dev server & bundler |
-| UI Library | React | 19.2 | Component model |
-| Routing | React Router DOM | 7.x | SPA client-side routing |
-| Styling | TailwindCSS | 4.1 | Utility-first CSS |
-| State | Redux Toolkit + RTK Query | 2.x | State & data fetching |
-| Rich Text | Jodit React | 5.x | WYSIWYG blog/page editor |
-| PDF Export | jsPDF + jsPDF-AutoTable | 4.x | Invoice & report PDF generation |
-| Excel Export | XLSX | 0.18 | Report Excel exports |
-| Date Picker | React DatePicker | 9.x | Date range filters |
-| Pagination | React Paginate | 8.x | Server-side pagination |
-| Icons | Lucide React + React Icons | — | Icon library |
-| HTTP | Axios | 1.x | API communication |
-| Forms | React Hook Form | 7.x | Admin form handling |
-| Persistence | redux-persist | 6.x | Auth state persistence |
+| Category     | Technology                 | Version | Purpose                         |
+| ------------ | -------------------------- | ------- | ------------------------------- |
+| Build Tool   | Vite                       | 7.x     | Fast HMR dev server & bundler   |
+| UI Library   | React                      | 19.2    | Component model                 |
+| Routing      | React Router DOM           | 7.x     | SPA client-side routing         |
+| Styling      | TailwindCSS                | 4.1     | Utility-first CSS               |
+| State        | Redux Toolkit + RTK Query  | 2.x     | State & data fetching           |
+| Rich Text    | Jodit React                | 5.x     | WYSIWYG blog/page editor        |
+| PDF Export   | jsPDF + jsPDF-AutoTable    | 4.x     | Invoice & report PDF generation |
+| Excel Export | XLSX                       | 0.18    | Report Excel exports            |
+| Date Picker  | React DatePicker           | 9.x     | Date range filters              |
+| Pagination   | React Paginate             | 8.x     | Server-side pagination          |
+| Icons        | Lucide React + React Icons | —       | Icon library                    |
+| HTTP         | Axios                      | 1.x     | API communication               |
+| Forms        | React Hook Form            | 7.x     | Admin form handling             |
+| Persistence  | redux-persist              | 6.x     | Auth state persistence          |
 
 ---
 
@@ -334,6 +334,7 @@ bahari-shop-ecommerce/
 ### Backend API — NestJS 11
 
 #### 🔐 Authentication & Users
+
 - **JWT authentication** with access token + refresh token rotation
 - **Google OAuth** — verifies Google ID tokens server-side via `google-auth-library`
 - **Role-based access control** — `CUSTOMER`, `ADMIN` roles with `@Roles()` guard
@@ -343,6 +344,7 @@ bahari-shop-ecommerce/
 - Password hashing via `bcrypt`
 
 #### 🛍️ Product Catalog
+
 - **Multi-variant products** — size, color, material, or any custom option
 - `ProductOption` + `ProductOptionValue` + `ProductVariant` entity tree
 - **Bulk pricing tiers** — quantity-based price breaks per variant
@@ -354,6 +356,7 @@ bahari-shop-ecommerce/
 - **Product views tracking** — view count per product
 
 #### 📦 Orders & Fulfillment
+
 - Order lifecycle: `pending → confirmed → processing → shipped → delivered → cancelled → refunded`
 - Payment statuses: `unpaid → paid → partial → refunded`
 - Payment methods: `Cash`, `bKash`, `Nagad`, `Card`, `Bank Transfer`, `SSL Commerce`, `Cash on Delivery`
@@ -364,6 +367,7 @@ bahari-shop-ecommerce/
 - UTM/marketing attribution fields on every order
 
 #### 💳 SSL Commerce Payment Gateway
+
 - Full **SSL Commerce Bangladesh** integration (sandbox + production)
 - Five endpoints: `initiate`, `success`, `fail`, `cancel`, `IPN`
 - SSL callback validation via SSL's verification API
@@ -372,12 +376,14 @@ bahari-shop-ecommerce/
 - Environment-switchable: sandbox (`testbox`) ↔ live store credentials
 
 #### 🎟️ Coupon System
+
 - Fields: unique `code`, `discountType` (percent | fixed), `discountValue`, `minPurchase`, `maxUses`, `usedCount`, `validFrom`, `validUntil`, `isActive`
 - `POST /coupons/validate` — public endpoint, validates code against cart total
 - `usedCount` auto-incremented on successful order creation
 - Admin CRUD: create, edit, enable/disable coupons with full dashboard UI
 
 #### 📊 Marketing Attribution & Analytics
+
 - **Client-side**: `useTrackingParams` hook captures UTM params (`utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`) + `fbclid` / `gclid` from URL, stores in `kc_tracking` cookie (30-day TTL)
 - **Auto FBC generation**: constructs Facebook click ID (`fbc`) from `fbclid` + timestamp
 - **Server-side**: Order entity stores all tracking fields; `CheckoutPage` spreads stored params into order payload
@@ -385,6 +391,7 @@ bahari-shop-ecommerce/
 - **Campaign Attribution Report**: groups orders by `utmSource / utmMedium / utmCampaign`, calculates revenue share per campaign, Excel export
 
 #### 📬 Bulk Messaging
+
 - **SMS** via configurable HTTP gateway (env vars: `SMS_GATEWAY_URL`, `SMS_API_TOKEN`, `SMS_SID`)
 - **Email** via Nodemailer (SMTP)
 - Template system with `{{name}}` personalization placeholder
@@ -393,6 +400,7 @@ bahari-shop-ecommerce/
 - Full send history with pagination and detail modal
 
 #### 🏢 Company Information
+
 - Singleton `company_info` table — one row, upserted via `PATCH`
 - Fields: name, tagline, description, `logoUrl` (ImageKit), address, phone, email, website, `socialLinks` (JSONB)
 - Frontend dynamically loads company name, logo, and contact info from this API
@@ -400,19 +408,20 @@ bahari-shop-ecommerce/
 
 #### 📈 Business Intelligence Reports
 
-| Report | Description |
-|--------|-------------|
-| **Sales Summary** | Revenue, orders, AOV by date range |
-| **Orders Report** | Order volume, status breakdown, trends |
-| **Income Report** | Revenue by category/product/period |
-| **Expense Report** | Expense ledger with categorization |
-| **Inventory Report** | Current stock levels, low-stock alerts |
-| **Stock Movements** | In/out movements with timestamps |
+| Report                   | Description                                |
+| ------------------------ | ------------------------------------------ |
+| **Sales Summary**        | Revenue, orders, AOV by date range         |
+| **Orders Report**        | Order volume, status breakdown, trends     |
+| **Income Report**        | Revenue by category/product/period         |
+| **Expense Report**       | Expense ledger with categorization         |
+| **Inventory Report**     | Current stock levels, low-stock alerts     |
+| **Stock Movements**      | In/out movements with timestamps           |
 | **Campaign Attribution** | UTM-based revenue attribution per campaign |
 
 All reports support date range filtering and Excel export.
 
 #### 💰 Accounting Module
+
 - **Chart of Accounts** — asset, liability, equity, income, expense account types
 - **Journal Ledger** — all financial entries with debit/credit columns
 - **Transactions** — income & expense recording
@@ -420,21 +429,25 @@ All reports support date range filtering and Excel export.
 - Reports: P&L, balance summary
 
 #### 👥 HRM Module
+
 - **Employees** — name, designation, department, join date, salary, contact
 - **Designations** — role/title management
 - Designed for managing shop staff and operations team
 
 #### 🚚 Courier Integration
+
 - **Pathao** — store creation, order creation, tracking via Pathao API
 - **Fraud Check** — heuristic fraud detection before courier assignment
 - Admin assigns courier from order detail page; tracking number stored on order
 
 #### 🔔 Push Notifications
+
 - **Firebase FCM** integration via `firebase-admin`
 - `FcmService` sends targeted push notifications to customer devices
 - Notification log stored in database for history
 
 #### 📦 Inventory
+
 - Stock level tracking per product variant
 - Stock movement logging (in/out with reason)
 - **Cron job**: scheduled cleanup of expired inventory reservation locks via `@nestjs/schedule`
@@ -445,23 +458,24 @@ All reports support date range filtering and Excel export.
 
 #### Pages & Experiences
 
-| Page | Description |
-|------|-------------|
-| **Homepage** | Hero banners (Swiper), featured sections, flash deals, top-ranking products, testimonials |
-| **Shop** `/shop` | Product grid with category, brand, price filters; sorting; server-side pagination |
-| **Product Details** `/product-details/[slug]` | Variant selector, option picker, bulk pricing display, image gallery, reviews, related products |
-| **Cart** | Persistent cart (Redux Persist), quantity control, coupon application, delivery charge calculation |
-| **Checkout** `/enjoy/checkout` | Address form, payment method selection (COD / SSL Commerce), order summary |
-| **Payment Results** | Success confirmation, failure & cancellation pages with retry option |
-| **Account Dashboard** `/account` | Order history, order detail, saved addresses, wishlist, password change |
-| **Deals** `/deals` | Time-limited flash deals with countdown |
-| **Rankings** `/rankings` | Top-ranked products |
-| **Blog** `/blog` | Article listing + full article page |
-| **Static Pages** `/pages/[slug]` | CMS-driven: About, Terms, Privacy, Contact, FAQ |
-| **Login / Register** | JWT auth + Google OAuth, animated food-themed card UI |
-| **Wishlist** | Persisted wishlist with quick add-to-cart |
+| Page                                          | Description                                                                                        |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Homepage**                                  | Hero banners (Swiper), featured sections, flash deals, top-ranking products, testimonials          |
+| **Shop** `/shop`                              | Product grid with category, brand, price filters; sorting; server-side pagination                  |
+| **Product Details** `/product-details/[slug]` | Variant selector, option picker, bulk pricing display, image gallery, reviews, related products    |
+| **Cart**                                      | Persistent cart (Redux Persist), quantity control, coupon application, delivery charge calculation |
+| **Checkout** `/enjoy/checkout`                | Address form, payment method selection (COD / SSL Commerce), order summary                         |
+| **Payment Results**                           | Success confirmation, failure & cancellation pages with retry option                               |
+| **Account Dashboard** `/account`              | Order history, order detail, saved addresses, wishlist, password change                            |
+| **Deals** `/deals`                            | Time-limited flash deals with countdown                                                            |
+| **Rankings** `/rankings`                      | Top-ranked products                                                                                |
+| **Blog** `/blog`                              | Article listing + full article page                                                                |
+| **Static Pages** `/pages/[slug]`              | CMS-driven: About, Terms, Privacy, Contact, FAQ                                                    |
+| **Login / Register**                          | JWT auth + Google OAuth, animated food-themed card UI                                              |
+| **Wishlist**                                  | Persisted wishlist with quick add-to-cart                                                          |
 
 #### Frontend Architecture Patterns
+
 - **App Router** — Server Components for initial data fetch (SEO, revalidation), Client Components for interactivity
 - **RTK Query** — All API calls through typed hooks; automatic cache invalidation
 - **`TransformInterceptor` contract** — All responses follow `{ success, data, statusCode }` shape
@@ -473,12 +487,14 @@ All reports support date range filtering and Excel export.
 ### Admin Dashboard — Vite + React 19
 
 #### Dashboard & Analytics
+
 - KPI cards: total orders, revenue, customers, pending orders
 - Recent orders table with status badges
 - Quick-link banners to Campaign Attribution and key reports
 - Date-filtered analytics charts
 
 #### Product & Catalog Management
+
 - Full product CRUD with rich form: name, description (Jodit WYSIWYG), specifications, SEO fields
 - Variant builder: define options (e.g. Size: S/M/L) and generate variants with individual pricing/stock
 - Bulk pricing tier management per variant
@@ -486,6 +502,7 @@ All reports support date range filtering and Excel export.
 - Category tree management and brand CRUD
 
 #### Order Management
+
 - Order list with status filters, search, date range, payment status
 - Order detail: items, customer info, delivery address, payment timeline
 - Status update workflow with history
@@ -494,37 +511,44 @@ All reports support date range filtering and Excel export.
 - Admin-created custom orders
 
 #### Customer Management
+
 - Customer list with order count, total spend
 - Customer detail: profile, order history, address book
 - Customer rank assignment (loyalty tiers)
 
 #### Inventory Management
+
 - Stock level grid by product/variant
 - Stock adjustment form with reason tracking
 - Inventory report with low-stock highlighting
 
 #### Accounting
+
 - Account chart (create, edit, categorize accounts)
 - Transaction entry (income / expense)
 - Ledger view with debit/credit columns
 - Income & Expense reports with date filtering
 
 #### HRM
+
 - Employee roster with full profile fields
 - Designation/role management
 - Add/edit/deactivate employees
 
 #### Marketing — Offers
+
 - **Coupons**: CRUD, activate/deactivate, usage stats
 - **Deals**: Create flash deals with products and expiry
 
 #### Messaging Center
+
 - Compose and send bulk SMS or email
 - Target: all customers / specific user(s) / multiple users
 - Template library (save, load, edit templates)
 - Send history with delivery stats and per-recipient status modal
 
 #### Reports Suite
+
 - **Sales Summary** — KPI snapshot with trend chart
 - **Orders Report** — Volume, AOV, status breakdown
 - **Income Report** — Revenue entries with filtering
@@ -534,6 +558,7 @@ All reports support date range filtering and Excel export.
 - **Campaign Attribution** — UTM-based revenue by source/campaign, revenue share %, Excel export
 
 #### Settings & Configuration
+
 - **Company Info** — Logo upload, contact details, social media links
 - **Delivery Charges** — Zone-based shipping rules
 - **Order Sources** — Define & manage order channels
@@ -608,6 +633,7 @@ order_sources
 ```
 
 **Key Design Decisions:**
+
 - UUIDs as primary keys throughout (except legacy integer PKs where noted)
 - `OrderAddress` is a **snapshot entity** — decoupled from user addresses to preserve historical data
 - `company_info` is a **singleton** — always upserted, never multi-row
@@ -619,40 +645,48 @@ order_sources
 ## 🔌 Integrations & Third-Party Services
 
 ### SSL Commerce (Payment Gateway)
+
 - Provider: [SSLCommerz](https://sslcommerz.com) — Bangladesh's leading payment gateway
 - Supports all local payment methods: VISA, Mastercard, bKash, Nagad, Rocket, bank transfer
 - Sandbox and production environments configurable via env vars
 - IPN (Instant Payment Notification) endpoint for server-to-server confirmation
 
 ### Pathao Courier
+
 - Integration with [Pathao](https://pathao.com/bd/business/) logistics API
 - Store registration, order creation, and tracking within admin dashboard
 - Fraud detection layer before order dispatch
 
 ### Facebook Conversions API (CAPI)
+
 - Server-side Purchase event sent after every order — bypasses browser ad blockers and iOS 14+ privacy restrictions
 - Deduplication via `eventId` + `fbp`/`fbc` cookies
 - Implemented as asynchronous BullMQ job (non-blocking to order creation)
 
 ### ImageKit
+
 - All product images and company logo stored and served via ImageKit CDN
 - Auto-thumbnail generation and URL-based transformations
 - `Sharp` used server-side for pre-processing before upload
 
 ### Firebase
+
 - **Admin SDK** (backend): FCM push notification dispatch
 - **Client SDK** (frontend): notification reception + service worker for background push
 
 ### Google OAuth
+
 - `google-auth-library` verifies Google ID token server-side
 - `@react-oauth/google` on frontend for OAuth popup
 - On success: user upserted in DB, JWT tokens issued
 
 ### Nodemailer (SMTP)
+
 - Transactional email: order confirmation, password reset
 - Bulk messaging for campaigns
 
 ### AWS S3
+
 - Binary file/asset backup storage
 - Configured via `@aws-sdk/client-s3`
 
@@ -660,18 +694,18 @@ order_sources
 
 ## 🔒 Security Implementation
 
-| Layer | Mechanism |
-|-------|-----------|
-| **Authentication** | JWT access tokens (short-lived) + refresh token rotation |
-| **Authorization** | Role-based `@Roles()` guard on controllers; `@PublicRoute()` for open endpoints |
-| **HTTP Headers** | `Helmet` middleware — sets `X-Frame-Options`, `CSP`, `HSTS`, etc. |
-| **Password Storage** | `bcrypt` with salt rounds (never plain-text) |
-| **Input Validation** | `class-validator` DTOs on all incoming request bodies |
-| **SQL Injection** | TypeORM parameterized queries throughout (no raw SQL concatenation) |
-| **CORS** | Configured to allow only trusted origins (`FRONTEND_URL`, `ADMIN_URL`) |
-| **Payment Validation** | All SSL Commerce callbacks re-validated against SSL's verification API |
-| **Fraud Detection** | Pathao orders pass through fraud check service before dispatch |
-| **Admin Routes** | All `/admin-*` endpoints require `ADMIN` role |
+| Layer                  | Mechanism                                                                       |
+| ---------------------- | ------------------------------------------------------------------------------- |
+| **Authentication**     | JWT access tokens (short-lived) + refresh token rotation                        |
+| **Authorization**      | Role-based `@Roles()` guard on controllers; `@PublicRoute()` for open endpoints |
+| **HTTP Headers**       | `Helmet` middleware — sets `X-Frame-Options`, `CSP`, `HSTS`, etc.               |
+| **Password Storage**   | `bcrypt` with salt rounds (never plain-text)                                    |
+| **Input Validation**   | `class-validator` DTOs on all incoming request bodies                           |
+| **SQL Injection**      | TypeORM parameterized queries throughout (no raw SQL concatenation)             |
+| **CORS**               | Configured to allow only trusted origins (`FRONTEND_URL`, `ADMIN_URL`)          |
+| **Payment Validation** | All SSL Commerce callbacks re-validated against SSL's verification API          |
+| **Fraud Detection**    | Pathao orders pass through fraud check service before dispatch                  |
+| **Admin Routes**       | All `/admin-*` endpoints require `ADMIN` role                                   |
 
 ---
 
@@ -838,6 +872,7 @@ VITE_FIREBASE_APP_ID=...
 The backend exposes a **Swagger UI** at `http://localhost:3001/api/docs` when running in development.
 
 ### Base URL
+
 ```
 http://localhost:3001/api/v1
 ```
@@ -845,6 +880,7 @@ http://localhost:3001/api/v1
 ### Authentication
 
 All protected endpoints require:
+
 ```
 Authorization: Bearer <access_token>
 ```
@@ -852,6 +888,7 @@ Authorization: Bearer <access_token>
 ### Response Format
 
 All API responses follow this envelope:
+
 ```json
 {
   "success": true,
@@ -864,23 +901,23 @@ All API responses follow this envelope:
 
 ### Core Endpoint Groups
 
-| Group | Base Path | Auth |
-|-------|-----------|------|
-| Auth | `/api/v1/auth` | Public / JWT |
-| Users | `/api/v1/users` | JWT |
-| Products | `/api/v1/products` | Public (read) / Admin (write) |
-| Categories | `/api/v1/categories` | Public (read) / Admin (write) |
-| Orders | `/api/v1/orders` | JWT |
-| Coupons | `/api/v1/coupons` | Public (validate) / Admin (CRUD) |
-| SSL Payment | `/api/v1/ssl-payment` | Public (callbacks) / JWT (initiate) |
-| Admin Reports | `/api/v1/admin-reports` | Admin |
-| Dashboard | `/api/v1/dashboard` | Admin |
-| Messaging | `/api/v1/messaging` | Admin |
-| Company Info | `/api/v1/company-info` | Public (read) / Admin (write) |
-| Accounting | `/api/v1/accounting` | Admin |
-| HRM | `/api/v1/hrm` | Admin |
-| Inventory | `/api/v1/inventory` | Admin |
-| Tracking | (internal queue, no REST) | — |
+| Group         | Base Path                 | Auth                                |
+| ------------- | ------------------------- | ----------------------------------- |
+| Auth          | `/api/v1/auth`            | Public / JWT                        |
+| Users         | `/api/v1/users`           | JWT                                 |
+| Products      | `/api/v1/products`        | Public (read) / Admin (write)       |
+| Categories    | `/api/v1/categories`      | Public (read) / Admin (write)       |
+| Orders        | `/api/v1/orders`          | JWT                                 |
+| Coupons       | `/api/v1/coupons`         | Public (validate) / Admin (CRUD)    |
+| SSL Payment   | `/api/v1/ssl-payment`     | Public (callbacks) / JWT (initiate) |
+| Admin Reports | `/api/v1/admin-reports`   | Admin                               |
+| Dashboard     | `/api/v1/dashboard`       | Admin                               |
+| Messaging     | `/api/v1/messaging`       | Admin                               |
+| Company Info  | `/api/v1/company-info`    | Public (read) / Admin (write)       |
+| Accounting    | `/api/v1/accounting`      | Admin                               |
+| HRM           | `/api/v1/hrm`             | Admin                               |
+| Inventory     | `/api/v1/inventory`       | Admin                               |
+| Tracking      | (internal queue, no REST) | —                                   |
 
 ---
 
@@ -888,14 +925,14 @@ All API responses follow this envelope:
 
 ### Recommended Stack
 
-| Component | Platform |
-|-----------|----------|
-| Backend | Railway / Render / VPS (Ubuntu) |
-| Frontend | Vercel |
-| Admin Dashboard | Vercel / Netlify |
-| Database | Railway PostgreSQL / Supabase / RDS |
-| Redis | Railway Redis / Upstash |
-| Images | ImageKit (CDN included) |
+| Component       | Platform                            |
+| --------------- | ----------------------------------- |
+| Backend         | Railway / Render / VPS (Ubuntu)     |
+| Frontend        | Vercel                              |
+| Admin Dashboard | Vercel / Netlify                    |
+| Database        | Railway PostgreSQL / Supabase / RDS |
+| Redis           | Railway Redis / Upstash             |
+| Images          | ImageKit (CDN included)             |
 
 ### Production Checklist
 
