@@ -27,13 +27,13 @@ export const userApi = baseApi.injectEndpoints({
         url: `/users/profile`,
         method: 'GET',
       }),
-      providesTags: [tagTypes.user], // auth নয়, user tag
+      providesTags: [tagTypes.user],
     }),
 
     updateProfile: build.mutation({
       query: (data) => ({
         url: `/users/update-profile`,
-        method: 'PATCH', // ✅ POST থেকে PATCH
+        method: 'PATCH',
         data,
       }),
       invalidatesTags: [tagTypes.user],

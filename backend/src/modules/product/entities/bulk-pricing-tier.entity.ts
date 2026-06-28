@@ -9,8 +9,6 @@ import {
 import { Product } from './product.entity';
 import { ProductVariant } from './product-variant.entity';
 
-// JSONB থেকে আলাদা table এ — queryable & indexable
-// Product level অথবা Variant level এ bulk price দেওয়া যাবে
 
 @Entity('bulk_pricing_tiers')
 @Index(['product_id'])

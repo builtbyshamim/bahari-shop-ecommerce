@@ -64,8 +64,6 @@ export class CategoriesService {
 
   // ──────────────────────────────────────────────
   // ✅ Filter with descendants support
-  // categoryId দিলে → selected + সব children আসবে
-  // search দিলে → name LIKE search
   // ──────────────────────────────────────────────
   async findAllWithDescendants(
     query: PaginationQueryDto & { categoryId?: string },
@@ -255,7 +253,7 @@ export class CategoriesService {
     }
   }
 
-  // ✅ Bulk reorder — drag & drop এর জন্য
+  // ✅ Bulk reorder — for drag & drop
   async reorder(items: { id: string; position: number }[]) {
     try {
       await this.dataSource.transaction(async (manager) => {

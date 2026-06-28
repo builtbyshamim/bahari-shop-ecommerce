@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   const featureType = await fetchFeatureType(type);
   const name = featureType?.name ?? 'Products';
   return {
-    title: `${name} — পণ্য তালিকা`,
+    title: `${name} — Products`,
     openGraph: { title: `${name} | Bahari Shop` },
   };
 }

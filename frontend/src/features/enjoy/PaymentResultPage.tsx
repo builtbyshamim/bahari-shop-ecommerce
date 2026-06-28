@@ -37,8 +37,8 @@ const PaymentResultPage = ({ status }: Props) => {
           </h1>
           <p className="text-sm text-black-500">
             {isFail
-              ? 'আপনার পেমেন্ট সফল হয়নি। আবার চেষ্টা করুন।'
-              : 'আপনি পেমেন্ট বাতিল করেছেন।'}
+              ? 'Your payment was not successful. Please try again.'
+              : 'You have cancelled the payment.'}
           </p>
           {reason && (
             <p className="mt-2 text-xs text-red-500 bg-red-50 border border-red-100 rounded-lg px-3 py-2">
@@ -51,8 +51,8 @@ const PaymentResultPage = ({ status }: Props) => {
         <div className="w-full bg-black-50 border border-black-100 rounded-xl px-4 py-3 text-left">
           <p className="text-xs text-black-600 leading-relaxed">
             {isFail
-              ? 'আপনার অর্ডারটি সিস্টেমে সেভ আছে। অর্ডার ট্র্যাক করে পুনরায় পেমেন্ট করতে পারবেন অথবা Cash on Delivery তে অর্ডার করুন।'
-              : 'আপনার অর্ডারটি তৈরি হয়েছে কিন্তু পেমেন্ট হয়নি। আপনি চাইলে আবার চেষ্টা করতে পারেন।'}
+              ? 'Your order is saved in the system. You can track your order to retry payment or place a new order with Cash on Delivery.'
+              : 'Your order has been created but payment was not completed. You can try again if you wish.'}
           </p>
         </div>
 

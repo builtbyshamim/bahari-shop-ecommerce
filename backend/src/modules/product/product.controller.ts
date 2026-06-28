@@ -87,7 +87,7 @@ export class ProductController {
     @Body() dto: CreateProductDto,
     @CurrentUser() user: UserEntity,
   ) {
-    const vendorId = String(user.id) ?? 'test-vendor-id'; // auth থেকে আসবে
+    const vendorId = String(user.id) ?? 'test-vendor-id';
     return this.productService.createProduct(vendorId, dto);
   }
 

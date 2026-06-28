@@ -306,13 +306,13 @@ export default function CreatePost() {
   }
 
   function handleCoverUrl() {
-    const url = prompt("Image URL লিখুন:");
+    const url = prompt("Enter Image URL:");
     if (url) setCoverUrl(url);
   }
 
   async function handlePublish() {
-    if (!title.trim()) { showToast("Title দিন!", "error"); return; }
-    if (!content || stripHtml(content).length < 10) { showToast("Content লিখুন!", "error"); return; }
+    if (!title.trim()) { showToast("Please enter a title!", "error"); return; }
+    if (!content || stripHtml(content).length < 10) { showToast("Please enter some content!", "error"); return; }
     setSubmitting(true);
     await new Promise((r) => setTimeout(r, 1200));
     setStatus("ready");

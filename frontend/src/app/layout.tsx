@@ -37,12 +37,12 @@ export async function generateMetadata(): Promise<Metadata> {
   const info = await fetchCompanyInfo();
 
   const name = info?.name || 'Bahari Shop';
-  const tagline = info?.tagline || 'সেরা দামে সেরা পণ্য';
+  const tagline = info?.tagline || 'Best Products at Best Prices';
   const seoTitle = info?.seoTitle || `${name} — ${tagline}`;
   const seoDescription =
     info?.seoDescription ||
     info?.description ||
-    `${name}-এ পান সেরা পণ্য সেরা দামে। ইলেকট্রনিক্স, ফ্যাশন, গৃহস্থালী পণ্যসহ হাজারো আইটেম। দ্রুত ডেলিভারি, সহজ রিটার্ন পলিসি।`;
+    `Find the best products at the best prices at ${name}. Electronics, fashion, home goods and thousands more items. Fast delivery, easy returns.`;
   const keywords: string[] = info?.seoKeywords
     ? info.seoKeywords
         .split(',')

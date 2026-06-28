@@ -189,7 +189,7 @@ export class DealsService {
         .where('product.id IN (:...ids)', { ids })
         .getMany(),
 
-      // Variant price — শুধু hasVariants=true product গুলোর জন্য
+      // Variant price — only for products where hasVariants=true
       this.productRepo
         .createQueryBuilder('product')
         .leftJoin('product.variants', 'variant')
@@ -214,7 +214,7 @@ export class DealsService {
         .getRawMany(),
     ]);
 
-    // stockMap বানাও — priceMap এর পরে
+    // Build stockMap — after priceMap
     const stockMap = new Map<string, { qty: number; isTracked: boolean }>();
     for (const s of stockData) {
       const existing = stockMap.get(s.product_id);
@@ -228,7 +228,7 @@ export class DealsService {
         });
       }
     }
-    // ── Step 3: Deal priority order অনুযায়ী sort রাখো ──────────
+    // ── Step 3: Sort by deal priority order ──────────
     const productMap = new Map(products.map((p) => [p.id, p]));
     const priceMap = new Map(
       variantPrices.map((v) => [
@@ -298,7 +298,7 @@ export class DealsService {
       },
     };
 
-    // ✅ Redis এ cache করো
+    // ✅ Cache in Redis
     await this.cacheManager.set(CACHE_KEY, result, TOP_DEALS_TTL);
     return result;
   }

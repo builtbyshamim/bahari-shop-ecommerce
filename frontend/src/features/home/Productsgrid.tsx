@@ -51,8 +51,8 @@ async function ProductsList({ page }: { page: number }) {
     );
   }
 
-  // Client component কে initial data দিয়ে দাও —
-  // বাকি Load More গুলো সে নিজেই handle করবে
+  // Pass initial data to the client component —
+  // it will handle subsequent Load More calls itself
   return <ProductsListClient initialData={response} />;
 }
 

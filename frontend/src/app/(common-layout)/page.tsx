@@ -9,12 +9,12 @@ import FeatureTypeSection from '@/features/home/FeatureTypeSection';
 import BlogSection from '@/features/home/BlogSection';
 
 export const metadata: Metadata = {
-  title: 'Bahari Shop — সেরা দামে সেরা পণ্য',
+  title: 'Bahari Shop — Best Products at Best Prices',
   description:
-    'Bahari Shop হোমপেজে আসুন। টপ ডিল, নতুন পণ্য, বেস্ট সেলিং পণ্য একসাথে পাচ্ছেন সেরা দামে।',
+    'Visit Bahari Shop homepage. Top deals, new arrivals, and best-selling products at the best prices.',
   openGraph: {
-    title: 'Bahari Shop — সেরা দামে সেরা পণ্য',
-    description: 'টপ ডিল, নতুন পণy, বেস্ট সেলিং পণy एकसाथे पाच्छेन सेरा दामे।',
+    title: 'Bahari Shop — Best Products at Best Prices',
+    description: 'Top deals, new arrivals and best sellers all in one place — Bahari Shop.',
     url: '/',
   },
 };

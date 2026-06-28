@@ -12,7 +12,7 @@ export const axiosBaseQuery =
         headers: {
           ...headers,
           ...(isFormData
-            ? {} // FormData হলে Content-Type দেবেন না!
+            ? {}
             : { "Content-Type": contentType || "application/json" }),
         },
       });

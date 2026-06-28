@@ -242,8 +242,6 @@ export class CreateVariantDto {
   hsCode?: string;
 
   // ─── Option Values ────────────────────────────────────────
-  // variant এর জন্য কোন option values apply হবে (by value string)
-  // Example: ["Red", "M"] — option names থেকে match করা হবে service এ
   @ApiProperty({
     example: ['Red', 'M'],
     description:
@@ -373,7 +371,7 @@ export class CreateProductDto {
   @ApiProperty({
     example: false,
     description:
-      'false = simple product (basePrice/baseStock use হবে), true = variant product',
+      'false = simple product (uses basePrice/baseStock), true = variant product',
   })
   @IsBoolean()
   hasVariants: boolean;

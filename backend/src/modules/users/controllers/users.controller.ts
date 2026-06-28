@@ -87,7 +87,6 @@ export class UsersController {
   ) {
     return this.usersService.updateProfile({ id: user.id }, updateUserDto);
   }
-  // users.controller.ts এ যোগ করো
 
   @Patch('change-password')
   @Roles(UserRole.ADMIN, UserRole.CUSTOMER, UserRole.EMPLOYEE)

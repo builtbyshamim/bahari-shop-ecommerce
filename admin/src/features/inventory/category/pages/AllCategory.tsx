@@ -191,7 +191,6 @@ const AllCategory = () => {
     }
   };
 
-  // ✅ Tree endpoint ব্যবহার করো
   const {
     data: categoryData,
     error,
@@ -204,7 +203,7 @@ const AllCategory = () => {
   // Tree data — root level categories (children nested inside)
   const categories: any[] = categoryData?.data || [];
 
-  // ✅ Client-side search filter (tree structure maintain রেখে)
+  // Client-side search filter (preserves tree structure)
   const filterTree = (nodes: any[], query: string): any[] => {
     if (!query) return nodes;
     return nodes.reduce((acc: any[], node) => {

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import OrdersPage from '@/features/account/Orders';
 
 export const metadata: Metadata = {
-  title: 'My Orders — আমার অর্ডার',
-  description: 'আপনার সব অর্ডারের তালিকা ও স্ট্যাটাস দেখুন।',
+  title: 'My Orders',
+  description: 'View all your orders and their status.',
   robots: { index: false, follow: false },
 };
 

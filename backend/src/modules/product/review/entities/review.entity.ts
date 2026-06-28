@@ -14,7 +14,7 @@ export enum ReviewStatus {
 
 @Entity('reviews')
 @Index(['product_id', 'status'])
-@Index(['user_id', 'product_id'], { unique: true }) // একজন user একটা product এ একটাই review
+@Index(['user_id', 'product_id'], { unique: true })
 export class Review {
   @PrimaryGeneratedColumn('uuid')
   id: string;

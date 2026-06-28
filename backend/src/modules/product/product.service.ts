@@ -49,7 +49,7 @@ export class ProductService {
     @InjectRepository(BulkPricingTier)
     private readonly bulkPricingRepo: Repository<BulkPricingTier>,
 
-    private readonly dataSource: DataSource, // transaction এর জন্য
+    private readonly dataSource: DataSource,
   ) {}
 
   // ─── Create Product ─────────────────────────────────────────────
@@ -63,7 +63,7 @@ export class ProductService {
           throw new BadRequestException('Variant product requires variants');
         this.validateVariantOptionValues(dto);
       }
-      // সব কিছু একটা transaction এ করি — যেকোনো step fail করলে rollback হবে
+      // Run everything in a transaction — any step failure triggers rollback
       return await this.dataSource.transaction(async (manager) => {
         // ── Step 1: Product Save ─────────────────────────────────────
         const slug = await this.generateUniqueSlug(dto.name);
@@ -107,7 +107,7 @@ export class ProductService {
 
         // ── Step 4: Options & Variants (variant product only) ────────
         if (dto.hasVariants) {
-          // option value name → entity map (service এ lookup করতে)
+          // option value name → entity map (for service-level lookup)
           const optionValueMap = new Map<string, ProductOptionValue>();
           const options = dto.options ?? [];
           const variants = dto.variants ?? [];
@@ -261,7 +261,7 @@ export class ProductService {
     return `${prefix}-${suffix}-${unique}`;
   }
 
-  // Variant এর optionValues গুলো defined options এ আছে কিনা check
+  // Check that variant optionValues exist among defined options
   private validateVariantOptionValues(dto: CreateProductDto): void {
     const allDefinedValues = new Set(
       (dto.options ?? []).flatMap((o) => o.values.map((v) => v.value)),
@@ -293,7 +293,7 @@ export class ProductService {
       .skip(skip)
       .take(limit);
 
-    // PaginationQueryDto থেকে আসা search
+    // search from PaginationQueryDto
     if (dto.search) {
       qb.andWhere(
         '(product.name ILIKE :search OR product.slug ILIKE :search)',
@@ -301,7 +301,7 @@ export class ProductService {
       );
     }
 
-    // PaginationQueryDto থেকে আসা date range
+    // date range from PaginationQueryDto
     if (dto.startDate) {
       qb.andWhere('product.createdAt >= :startDate', {
         startDate: dto.startDate,

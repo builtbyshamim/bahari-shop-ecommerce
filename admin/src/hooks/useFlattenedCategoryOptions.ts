@@ -29,7 +29,6 @@ export const useFlattenedCategoryOptions = (excludeId?: string) => {
 
   const tree: any[] = data?.data || [];
 
-  // ✅ exclude current category (edit mode তে নিজেকে parent হিসেবে select করা যাবে না)
   const filterSelf = (nodes: any[], excludeId: string): any[] => {
     return nodes
       .filter((n) => n.id !== excludeId)

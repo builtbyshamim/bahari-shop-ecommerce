@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-// ✅ এই routes গুলো login ছাড়া access করা যাবে না
+// ✅ These routes cannot be accessed without login
 const PRIVATE_ROUTES = ['/account', '/profile', '/orders', '/checkout', '/settings'];
 
-// ✅ Login থাকলে এই routes এ যাওয়া যাবে না
+// ✅ These routes cannot be accessed when already logged in
 const AUTH_ROUTES = ['/login', '/register', '/forgot-password'];
 
 export function proxy(request: NextRequest) {

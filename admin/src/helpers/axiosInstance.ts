@@ -7,14 +7,14 @@ import {
   refreshTokenTTL,
 } from "../contents/token";
 
-// Cookie set করার helper function
+// Helper function to set a cookie
 const setTokenCookie = (name: string, value: string, days: number = 7) => {
   const expires = new Date();
   expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
   document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
 };
 
-// Cookie থেকে token পড়ার helper function
+// Helper function to read a token from a cookie
 const getTokenFromCookie = (name: string): string | null => {
   if (typeof document !== "undefined") {
     const match = document.cookie.match(
@@ -25,12 +25,12 @@ const getTokenFromCookie = (name: string): string | null => {
   return null;
 };
 
-// Cookie delete করার helper function
+// Helper function to delete a cookie
 const deleteTokenCookie = (name: string) => {
   document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;`;
 };
 
-// Axios instance তৈরি
+// Create Axios instance
 const instance = axios.create({
   timeout: 60000,
 });
@@ -53,7 +53,7 @@ const processQueue = (error: any, token: string | null = null) => {
   failedQueue = [];
 };
 
-// Request interceptor — প্রতিটি রিকোয়েস্ট পাঠানোর আগে cookie থেকে token নিয়ে Authorization header সেট করে
+// Request interceptor — reads token from cookie and sets Authorization header before each request
 instance.interceptors.request.use(
   (config) => {
     const token = getTokenFromCookie(accessTokenKey);
@@ -65,22 +65,22 @@ instance.interceptors.request.use(
   (error) => Promise.reject(error),
 );
 
-// Response interceptor (login response থেকে token নিয়ে cookie তে save করা + error handle + token refresh)
+// Response interceptor (save token from login response to cookie + error handling + token refresh)
 instance.interceptors.response.use(
   (response) => {
-    // যদি login বা admin-login বা refresh endpoint থেকে response আসে
+    // If response comes from login, admin-login, or refresh endpoint
     const isAuthEndpoint =
       response.config.url?.includes("/auth/admin-login") ||
       response.config.url?.includes("/auth/refresh");
 
     if (isAuthEndpoint && response.data?.data) {
       const { accessToken, refreshToken } = response.data.data;
-      // Access token cookie তে save করা (15 minutes)
+      // Save access token to cookie (15 minutes)
       if (accessToken) {
         setTokenCookie(accessTokenKey, accessToken, accessTokenTTL); // 15 minutes in days
       }
 
-      // Refresh token cookie তে save করা (7 days)
+      // Save refresh token to cookie (7 days)
       if (refreshToken) {
         setTokenCookie(refreshTokenKey, refreshToken, 7);
       }

@@ -31,7 +31,6 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
     onToggle?.(newValue);
   };
 
-  // ✅ Visual div click করলে hidden input কে trigger করবে
   const handleDivClick = () => {
     if (!disabled) {
       inputRef.current?.click();
@@ -60,15 +59,14 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
             id={name}
             {...registerProps}
             ref={(e) => {
-              registerRef(e); // react-hook-form এর ref
-              inputRef.current = e; // আমাদের local ref
+              registerRef(e);
+              inputRef.current = e;
             }}
             defaultChecked={defaultValue}
             disabled={disabled}
             className="sr-only peer"
           />
 
-          {/* ✅ onClick যোগ করা হয়েছে */}
           <div
             onClick={handleDivClick}
             className={`

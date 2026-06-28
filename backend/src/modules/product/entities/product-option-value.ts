@@ -29,7 +29,7 @@ export class ProductOptionValue {
   value: string; // "Red", "M", "Cotton"
 
   @Column({ nullable: true })
-  colorHex: string; // optional: Color option এর জন্য (#FF0000)
+  colorHex: string; // optional: for Color options (#FF0000)
 
   @Column({ type: 'int', default: 0 })
   position: number;

@@ -46,7 +46,7 @@ export class ReviewController {
     return this.reviewService.markHelpful(id);
   }
 
-  // Admin: সব reviews
+  // Admin: all reviews
   @Get('admin/all')
   findAll(@Query() query: QueryReviewDto) {
     return this.reviewService.findAll(query);

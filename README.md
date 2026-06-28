@@ -1,6 +1,6 @@
 <div align="center">
 
-# KCommerce — Full-Stack E-Commerce Platform
+# bahari-shop-ecommerce — Full-Stack E-Commerce Platform
 
 ### A production-grade, monorepo e-commerce ecosystem built for Bangladesh's digital market
 
@@ -26,7 +26,7 @@
 - [Feature Modules](#-feature-modules)
   - [Backend API](#backend-api--nestjs-11)
   - [Customer Frontend](#customer-frontend--nextjs-16)
-  - [Admin Dashboard](#admin-dashboard--vite--react-19)
+  - [Admin Dashboard](#admin--vite--react-19)
 - [Database Design](#-database-design)
 - [Integrations & Third-Party Services](#-integrations--third-party-services)
 - [Security Implementation](#-security-implementation)
@@ -37,9 +37,26 @@
 
 ---
 
+## Live Demo
+
+**Customer:**
+https://bahari-shop.vercel.app/
+
+**Admin:**
+https://bahari-shop-admin.vercel.app
+
+### Demo Admin
+
+| Field    | Value           |
+|----------|-----------------|
+| Email    | admin@gmail.com  |
+| Password | Password@123       |
+
+---
+
 ## 🎯 Overview
 
-**KCommerce** is a comprehensive, production-ready e-commerce platform designed specifically for the Bangladeshi market. Built as a three-part monorepo, it delivers a complete business solution — from customer-facing storefront to backend operations and administrative management.
+**bahari-shop-ecommerce** is a comprehensive, production-ready e-commerce platform designed specifically for the Bangladeshi market. Built as a three-part monorepo, it delivers a complete business solution — from customer-facing storefront to backend operations and administrative management.
 
 The platform handles the full lifecycle of an e-commerce business: product catalog management, customer acquisition (with marketing attribution), order processing, payment collection (SSL Commerce + Cash on Delivery), logistics (Pathao courier), inventory tracking, accounting, human resources, and business intelligence reporting — all in a single integrated system.
 
@@ -63,13 +80,13 @@ The platform handles the full lifecycle of an e-commerce business: product catal
 
 > *[Screenshot: Customer-facing homepage — hero banners, featured sections, deals, and product grid]*
 
-![Frontend Screenshot](./docs/screenshots/frontend-demo.png)
+![Frontend Screenshot]('https://i.ibb.co.com/hFxvYw79/Screenshot-2026-06-28-073312.png')
 
 ### Admin Dashboard
 
 > *[Screenshot: Admin dashboard — analytics overview, order management, and reporting interface]*
 
-![Admin Screenshot](./docs/screenshots/admin-demo.png)
+![Admin Screenshot]('https://i.ibb.co.com/8nSGn0RC/Screenshot-2026-06-28-073548.png')
 
 ---
 
@@ -146,7 +163,7 @@ TypeORM + PostgreSQL
 ## 📁 Monorepo Structure
 
 ```
-kcommerce/
+bahari-shop-ecommerce/
 ├── backend/                      # NestJS 11 REST API
 │   └── src/
 │       ├── modules/              # 37+ feature modules
@@ -217,7 +234,7 @@ kcommerce/
 │       ├── hooks/                # Custom hooks (useTrackingParams, etc.)
 │       └── helpers/              # Axios instance, token helpers
 │
-└── admin-dashboard/              # Vite + React 19 Admin SPA
+└── admin/              # Vite + React 19 Admin SPA
     └── src/
         ├── features/
         │   ├── accounting/       # Accounts, ledger, transactions, reports
@@ -670,20 +687,20 @@ order_sources
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/your-org/kcommerce.git
-cd kcommerce
+git clone https://github.com/builtbyshamim/bahari-shop-ecommerce.git
+cd bahari-shop-ecommerce
 
 # Install all three apps
 cd backend         && npm install && cd ..
 cd frontend        && npm install && cd ..
-cd admin-dashboard && npm install && cd ..
+cd admin && npm install && cd ..
 ```
 
 ### 2. Database Setup
 
 ```bash
 # Create PostgreSQL database
-psql -U postgres -c "CREATE DATABASE kcommerce;"
+psql -U postgres -c "CREATE DATABASE bahari-shop-ecommerce;"
 ```
 
 TypeORM will auto-sync the schema on first backend start (`synchronize: true` in development).
@@ -707,7 +724,7 @@ npm run dev
 # → http://localhost:3000
 
 # Terminal 3 — Admin Dashboard
-cd admin-dashboard
+cd admin
 npm run dev
 # → http://localhost:5173
 ```
@@ -731,7 +748,7 @@ DB_HOST=localhost
 DB_PORT=5432
 DB_USERNAME=postgres
 DB_PASSWORD=your_password
-DB_NAME=kcommerce
+DB_NAME=bahari-shop-ecommerce
 
 # Redis
 REDIS_URL=redis://localhost:6379
@@ -759,14 +776,14 @@ IMAGEKIT_URL_ENDPOINT=https://ik.imagekit.io/your_id
 AWS_ACCESS_KEY_ID=AKIA...
 AWS_SECRET_ACCESS_KEY=...
 AWS_REGION=ap-southeast-1
-AWS_BUCKET_NAME=kcommerce-assets
+AWS_BUCKET_NAME=bahari-shop-ecommerce-assets
 
 # SMTP / Email
 MAIL_HOST=smtp.gmail.com
 MAIL_PORT=587
 MAIL_USER=your@gmail.com
 MAIL_PASS=your_app_password
-MAIL_FROM="KCommerce <noreply@kcommerce.com>"
+MAIL_FROM="bahari-shop-ecommerce <noreply@bahari-shop-ecommerce.com>"
 
 # SMS Gateway
 SMS_GATEWAY_URL=https://your-sms-provider.com/api/send
@@ -803,7 +820,7 @@ NEXT_PUBLIC_FIREBASE_APP_ID=...
 NEXT_PUBLIC_FIREBASE_VAPID_KEY=...
 ```
 
-### Admin Dashboard (`admin-dashboard/.env`)
+### Admin Dashboard (`admin/.env`)
 
 ```env
 VITE_API_URL=http://localhost:3001
@@ -903,7 +920,7 @@ cd backend && npm run build && npm run start:prod
 cd frontend && npm run build && npm run start
 
 # Admin Dashboard
-cd admin-dashboard && npm run build
+cd admin && npm run build
 # Serve /dist as static files
 ```
 

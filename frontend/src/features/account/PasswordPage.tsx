@@ -43,7 +43,7 @@ export default function PasswordPage() {
       reset();
       setTimeout(() => setSaved(false), 3000);
     } catch (err: any) {
-      // error react-hook-form এর setError দিয়ে দেখাবো
+      // show error via react-hook-form setError
     }
   };
 

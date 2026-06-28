@@ -16,7 +16,7 @@ export class ReviewService {
     private readonly reviewRepo: Repository<Review>,
   ) {}
 
-  // ── User: review দেওয়া ────────────────────────────────────────
+  // ── User: submit a review ────────────────────────────────────────
   async create(userId: string, dto: CreateReviewDto) {
     const existing = await this.reviewRepo.findOne({
       where: { user_id: userId, product_id: dto.product_id },
@@ -36,7 +36,7 @@ export class ReviewService {
     return this.reviewRepo.save(review);
   }
 
-  // ── Public: approved review গুলো দেখা ─────────────────────────
+  // ── Public: view approved reviews ─────────────────────────
   async getApprovedByProduct(productId: string) {
     const [reviews, total] = await this.reviewRepo.findAndCount({
       where: { product_id: productId, status: ReviewStatus.APPROVED },
@@ -74,14 +74,14 @@ export class ReviewService {
     return { message: 'Marked as helpful' };
   }
 
-  // ── User: নিজের review দেখা ────────────────────────────────────
+  // ── User: view own review ────────────────────────────────────
   async getMyReview(userId: string, productId: string) {
     return this.reviewRepo.findOne({
       where: { user_id: userId, product_id: productId },
     });
   }
 
-  // ── Admin: সব review (pending filter সহ) ──────────────────────
+  // ── Admin: all reviews (with pending filter) ──────────────────────
   async findAll(query: QueryReviewDto) {
     const { status, page = 1, limit = 10 } = query;
     const where: any = {};

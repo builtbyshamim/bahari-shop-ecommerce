@@ -21,7 +21,7 @@ interface SelectAndSearchProps {
   setActiveModal?: (active: boolean) => void;
   required?: boolean;
   clearErrors?: any;
-  defaultValue?: string; // label string — edit mode এর জন্য
+  defaultValue?: string;
 }
 
 function SelectAndSearch({
@@ -48,7 +48,6 @@ function SelectAndSearch({
   const listRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // edit mode: defaultValue বা options change হলে selected update করো
   useEffect(() => {
     if (defaultValue) {
       setSelected(defaultValue);
@@ -74,7 +73,7 @@ function SelectAndSearch({
     handleSelected(option);
     setOpen(false);
     setSearchTerm("");
-    onChange(""); // search clear করো যাতে full list আবার load হয়
+    onChange("");
 
     if (setValue && trigger) {
       setValue(name, option.value);
@@ -149,7 +148,7 @@ function SelectAndSearch({
               value={searchTerm}
               onChange={(e) => {
                 setSearchTerm(e.target.value);
-                onChange(e.target.value); // parent কে জানাও — API search এর জন্য
+                onChange(e.target.value);
               }}
               className="w-full px-3 text-sm py-2 border-b border-gray-200 focus:outline-none focus:border-primary-500"
               autoFocus

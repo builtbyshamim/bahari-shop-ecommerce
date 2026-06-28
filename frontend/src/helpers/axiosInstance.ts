@@ -58,7 +58,7 @@ const processQueue = (error: any, token: string | null = null) => {
   failedQueue = [];
 };
 
-// Auth route গুলো — এগুলোতে refresh চেষ্টা করবে না
+// Auth routes — refresh will not be attempted for these
 const AUTH_ROUTES = ['/auth/user-login', '/auth/register', '/auth/refresh-token'];
 
 const isAuthRoute = (url: string | undefined): boolean => {
@@ -79,8 +79,8 @@ instance.interceptors.response.use(
     if (should401Retry) {
       const refreshToken = getRefreshToken();
 
-        // refresh token না থাকলে — শুধু reject করো, redirect করো না
-      // public page গুলো যেন login ছাড়াও browse করা যায়
+        // No refresh token — just reject, do not redirect
+      // public pages should remain browsable without login
       if (!refreshToken) {
         clearTokens();
         return Promise.reject({
@@ -89,7 +89,7 @@ instance.interceptors.response.use(
         });
       }
 
-      // অন্য request গুলো queue-তে রাখো
+      // Queue other requests
       if (isRefreshing) {
         return new Promise((resolve, reject) => {
           failedQueue.push({ resolve, reject });
@@ -128,7 +128,7 @@ instance.interceptors.response.use(
       }
     }
 
-    // ✅ অন্য সব error
+    // ✅ All other errors
     const responseObject = {
       statusCode: error?.response?.status || 500,
       message: error?.response?.data?.message || 'Something went wrong!',

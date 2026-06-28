@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import ProfilePage from '@/features/account/Account';
 
 export const metadata: Metadata = {
-  title: 'My Account — প্রোফাইল',
-  description: 'আপনার অ্যাকাউন্ট প্রোফাইল পরিচালনা করুন।',
+  title: 'My Account',
+  description: 'Manage your account profile.',
   robots: { index: false, follow: false },
 };
 

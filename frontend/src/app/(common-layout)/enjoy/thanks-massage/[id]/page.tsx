@@ -3,8 +3,8 @@ import { Suspense } from 'react';
 import OrderCompleteRoute from './OrderCompleteRoute';
 
 export const metadata: Metadata = {
-  title: 'Order Confirmed — ধন্যবাদ!',
-  description: 'আপনার অর্ডার সফলভাবে সম্পন্ন হয়েছে। অর্ডারের বিস্তারিত দেখুন।',
+  title: 'Order Confirmed — Thank You!',
+  description: 'Your order has been placed successfully. View your order details.',
   robots: { index: false, follow: false },
 };
 

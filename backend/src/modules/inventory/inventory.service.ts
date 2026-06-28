@@ -28,7 +28,7 @@ export class InventoryService {
     private readonly dataSource: DataSource,
   ) { }
 
-  // ── 1. Opening Stock তৈরি ──────────────────────────────────────
+  // ── 1. Create Opening Stock ──────────────────────────────────────
   async create(dto: CreateInventoryDto, performedBy: string) {
     const existing = await this.inventoryRepo.findOne({
       where: { product_id: dto.product_id, variant_id: dto.variant_id },

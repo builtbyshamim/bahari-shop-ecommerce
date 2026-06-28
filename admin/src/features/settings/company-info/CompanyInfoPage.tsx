@@ -274,7 +274,7 @@ const CompanyInfoPage = () => {
                 </label>
                 <input
                   {...register('seoTitle')}
-                  placeholder="e.g. Bahari Shop — সেরা দামে সেরা পণ্য"
+                  placeholder="e.g. Bahari Shop — Best Products at Best Prices"
                   className="w-full px-3 py-2 border border-gray-200 bg-gray-50 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm hover:border-gray-300"
                 />
                 <p className="text-xs text-gray-400 mt-1">Leave blank to auto-generate from Company Name + Tagline. Max 60 characters recommended.</p>
@@ -288,7 +288,7 @@ const CompanyInfoPage = () => {
                 <textarea
                   {...register('seoDescription')}
                   rows={3}
-                  placeholder="e.g. Bahari Shop-এ পান সেরা পণ্য সেরা দামে। ইলেকট্রনিক্স, ফ্যাশন, গৃহস্থালী পণ্যসহ হাজারো আইটেম।"
+                  placeholder="e.g. Find the best products at the best prices at Bahari Shop. Electronics, fashion, home goods and thousands more items."
                   className="w-full px-3 py-2 border border-gray-200 bg-gray-50 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm hover:border-gray-300 resize-none"
                 />
                 <p className="text-xs text-gray-400 mt-1">Leave blank to use Company Description. Max 160 characters recommended.</p>

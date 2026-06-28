@@ -571,7 +571,7 @@ const CheckoutPage = () => {
                   <div>
                     <p className="text-sm font-semibold text-black-800">Cash on Delivery</p>
                     <p className="text-[11px] text-black-400">
-                      পণ্য পেয়ে ক্যাশ দিন — Pay when you receive
+                      Pay when you receive (Cash on Delivery)
                     </p>
                   </div>
                 </div>
@@ -600,7 +600,7 @@ const CheckoutPage = () => {
                   <div>
                     <p className="text-sm font-semibold text-black-800">Online Payment</p>
                     <p className="text-[11px] text-black-400">
-                      SSL Commerz — Card, bKash, Nagad, Rocket ও অন্যান্য
+                      SSL Commerz — Card, bKash, Nagad, Rocket & more
                     </p>
                   </div>
                 </div>
@@ -616,8 +616,8 @@ const CheckoutPage = () => {
             {paymentMethod === 'ssl' && (
               <div className="mt-3 bg-blue-50 border border-blue-100 rounded-xl px-4 py-3">
                 <p className="text-[11px] text-blue-700">
-                  আপনি SSL Commerz-এর নিরাপদ পেমেন্ট গেটওয়েতে redirect হবেন। Visa, MasterCard,
-                  bKash, Nagad, Rocket সহ ৩০+ পেমেন্ট মেথড সাপোর্ট করে।
+                  You will be redirected to the SSL Commerz secure payment gateway. Visa, MasterCard,
+                  bKash, Nagad, Rocket and 30+ payment methods supported.
                 </p>
               </div>
             )}

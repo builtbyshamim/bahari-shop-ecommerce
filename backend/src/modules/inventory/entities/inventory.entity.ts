@@ -9,7 +9,7 @@ import { ProductVariant } from 'src/modules/product/entities/product-variant.ent
 import { Product } from 'src/modules/product/entities/product.entity';
 
 @Entity('inventory')
-@Index(['product_id', 'variant_id'], { unique: true }) // একটা product/variant এর একটাই row
+@Index(['product_id', 'variant_id'], { unique: true })
 export class Inventory {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -24,7 +24,7 @@ export class Inventory {
   @JoinColumn({ name: 'product_id' })
   product: Product;
 
-  // hasVariants=false হলে এটা null
+  // null when hasVariants=false
   @Column({ type: 'uuid', nullable: true })
   variant_id: string | null;
 
@@ -34,30 +34,30 @@ export class Inventory {
 
   // ─── Stock Numbers ────────────────────────────────────────────────
   @Column({ type: 'int', default: 0 })
-  qty_on_hand: number; // physically যা আছে
+  qty_on_hand: number; // physical stock count
 
   @Column({ type: 'int', default: 0 })
-  qty_reserved: number; // order placed কিন্তু এখনো ship হয়নি
+  qty_reserved: number; // order placed but not yet shipped
 
   @Column({ type: 'int', default: 0 })
-  qty_available: number; // = qty_on_hand - qty_reserved (সবসময় sync রাখতে হবে)
+  qty_available: number; // = qty_on_hand - qty_reserved (always kept in sync)
 
   // ─── Settings ─────────────────────────────────────────────────────
   @Column({ type: 'int', default: 5 })
-  low_stock_threshold: number; // এর নিচে গেলে alert
+  low_stock_threshold: number; // triggers alert when stock falls below this
 
   @Column({ default: true })
-  is_tracked: boolean; // false হলে stock count ধরা হয় না (digital/service)
+  is_tracked: boolean; // when false, stock count is not tracked (digital/service)
 
   @Column({ default: false })
-  allow_backorder: boolean; // stock 0 হলেও order নেওয়া যাবে কিনা
+  allow_backorder: boolean; // whether orders are accepted when stock is 0
 
 
   @Column({ type: 'decimal', precision: 10, scale: 2, default: 0 })
-  avg_cost_price: number; // WAC — প্রতিটা PURCHASE_IN এ recalculate হবে
+  avg_cost_price: number; // WAC — recalculated on every PURCHASE_IN
 
   @Column({ type: 'decimal', precision: 10, scale: 2, default: 0 })
-  total_cost_value: number; // = qty_on_hand × avg_cost_price (quick reference)
+  total_cost_value: number; // = qty_on_hand * avg_cost_price (quick reference)
 
   // ─── Relations ────────────────────────────────────────────────────
   @OneToMany(() => StockMovement, (m) => m.inventory, { cascade: true })

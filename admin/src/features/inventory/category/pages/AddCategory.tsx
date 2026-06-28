@@ -96,7 +96,7 @@ const AddCategory = ({ onClose }: any) => {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Position
-              <span className="ml-1 text-xs text-gray-400">(ছোট সংখ্যা = আগে দেখাবে)</span>
+              <span className="ml-1 text-xs text-gray-400">(lower number = shown first)</span>
             </label>
             <input
               type="number"

@@ -137,7 +137,7 @@ export class ProductViewService {
         .orderBy('product.priority', 'ASC')
         .getMany(),
 
-      // Variant price — শুধু hasVariants=true product গুলোর জন্য
+      // Variant price — only for products where hasVariants=true
       this.productRepo
         .createQueryBuilder('product')
         .leftJoin('product.variants', 'variant')
@@ -213,7 +213,7 @@ export class ProductViewService {
       },
     };
 
-    // ✅ Redis এ cache করো
+    // ✅ Cache in Redis
     await this.cacheManager.set(cacheKey, result, PRODUCTS_LIST_TTL);
 
     return result;
@@ -388,7 +388,7 @@ export class ProductViewService {
     return product;
   }
 
-  // ── Cache invalidation (product update/delete এ call করো) ──
+  // ── Cache invalidation (call on product update/delete) ──
   async invalidateProductCache(productId?: string) {
     if (productId) {
       await this.cacheManager.del(`${CacheKeys.PRODUCT_DETAIL}${productId}`);

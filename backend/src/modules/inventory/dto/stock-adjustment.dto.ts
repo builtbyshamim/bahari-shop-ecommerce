@@ -12,5 +12,5 @@ export class StockAdjustmentDto {
   type: 'in' | 'out';
 
   @IsString()
-  note: string; // adjustment এ note mandatory
+  note: string;
 }

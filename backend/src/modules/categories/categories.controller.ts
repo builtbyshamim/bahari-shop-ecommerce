@@ -42,7 +42,6 @@ export class CategoriesController {
   }
 
   // ✅ Tree endpoint — /categories/tree
-  // ⚠️ findAll এর আগে রাখতে হবে, না হলে 'tree' কে :id হিসেবে match করবে
   @Get('tree')
   @PublicRoute()
   findTree() {

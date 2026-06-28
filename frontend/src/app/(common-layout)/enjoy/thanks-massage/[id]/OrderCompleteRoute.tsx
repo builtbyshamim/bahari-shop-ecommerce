@@ -42,8 +42,8 @@ export default function OrderCompleteRoute() {
   if (isError || !order) {
     return (
       <NotFoundPage
-        title="অর্ডার পাওয়া যায়নি"
-        message="এই অর্ডারটি পাওয়া যায়নি অথবা এটি আপনার অ্যাকাউন্টের সাথে সম্পর্কিত নয়।"
+        title="Order Not Found"
+        message="This order could not be found or is not associated with your account."
         showSearch={false}
       />
     );

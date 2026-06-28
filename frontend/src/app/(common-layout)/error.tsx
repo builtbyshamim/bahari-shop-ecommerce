@@ -37,10 +37,10 @@ export default function Error({
 
         <div className="mb-8 space-y-3">
           <h1 className="text-2xl md:text-3xl font-extrabold text-black-900">
-            কিছু একটা সমস্যা হয়েছে
+            Something went wrong
           </h1>
           <p className="text-sm md:text-base text-black-500 leading-relaxed max-w-sm mx-auto">
-            সার্ভারে একটি অপ্রত্যাশিত ত্রুটি ঘটেছে। পেজটি রিলোড করুন অথবা হোমে ফিরে যান।
+            An unexpected server error occurred. Please reload the page or go back to the home page.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export default function Error({
             className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-red-500 to-orange-400 text-white text-sm font-bold hover:from-red-600 hover:to-red-500 active:scale-95 transition-all shadow-lg shadow-red-300/40"
           >
             <RefreshCw className="w-4 h-4" />
-            আবার চেষ্টা করুন
+            Try Again
           </button>
 
           <Link
@@ -59,7 +59,7 @@ export default function Error({
             className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-white border-2 border-black-200 text-black-700 text-sm font-bold hover:border-black-300 hover:bg-black-50 active:scale-95 transition-all shadow-sm"
           >
             <Home className="w-4 h-4" />
-            হোমে যান
+            Go Home
           </Link>
 
           <button
@@ -67,7 +67,7 @@ export default function Error({
             className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-white border-2 border-black-200 text-black-500 text-sm font-bold hover:border-black-300 hover:bg-black-50 active:scale-95 transition-all shadow-sm"
           >
             <ArrowLeft className="w-4 h-4" />
-            আগে যান
+            Go Back
           </button>
         </div>
       </div>

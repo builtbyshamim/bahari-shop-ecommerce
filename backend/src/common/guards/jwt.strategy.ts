@@ -29,12 +29,10 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
   }
 
   async validate(payload: JwtPayload) {
-    // ✅ শুধু sub check করো, email OR phone যেকোনো একটা থাকলেই হবে
     if (!payload.sub) {
       throw new UnauthorizedException('Invalid token payload');
     }
 
-    // email অথবা phone যেকোনো একটা থাকতে হবে
     if (!payload.email && !payload.phone) {
       throw new UnauthorizedException('Invalid token payload: no identifier');
     }

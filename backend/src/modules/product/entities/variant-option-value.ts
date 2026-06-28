@@ -16,7 +16,7 @@ import { ProductOptionValue } from './product-option-value';
 //   variant_id → optionValue "M"
 
 @Entity('variant_option_values')
-@Unique(['variant_id', 'option_value_id']) // same variant তে duplicate হবে না
+@Unique(['variant_id', 'option_value_id'])
 @Index(['variant_id'])
 @Index(['option_value_id'])
 export class VariantOptionValue {

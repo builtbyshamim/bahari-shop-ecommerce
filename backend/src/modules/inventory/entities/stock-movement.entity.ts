@@ -6,17 +6,17 @@ import { Inventory } from './inventory.entity';
 
 export enum MovementType {
   // ── In ──────────────────────────
-  INITIAL = 'initial',        // প্রথমবার stock set
-  PURCHASE_IN = 'purchase_in',    // supplier থেকে stock এলো
-  RETURN_IN = 'return_in',      // customer return এলো
-  ADJUSTMENT_IN = 'adjustment_in',  // manual বাড়ানো (found, recount)
-  TRANSFER_IN = 'transfer_in',    // অন্য জায়গা থেকে এলো
+  INITIAL = 'initial',        // initial stock set
+  PURCHASE_IN = 'purchase_in',    // stock received from supplier
+  RETURN_IN = 'return_in',      // customer return received
+  ADJUSTMENT_IN = 'adjustment_in',  // manual increase (found, recount)
+  TRANSFER_IN = 'transfer_in',    // received from another location
 
   // ── Out ─────────────────────────
-  SALE_OUT = 'sale_out',       // order ship হলো
-  ADJUSTMENT_OUT = 'adjustment_out', // manual কমানো (damaged, lost)
-  DAMAGE_OUT = 'damage_out',     // নষ্ট/expired
-  TRANSFER_OUT = 'transfer_out',   // অন্য জায়গায় গেলো
+  SALE_OUT = 'sale_out',       // order shipped
+  ADJUSTMENT_OUT = 'adjustment_out', // manual decrease (damaged, lost)
+  DAMAGE_OUT = 'damage_out',     // damaged/expired
+  TRANSFER_OUT = 'transfer_out',   // sent to another location
 }
 
 @Entity('stock_movements')
@@ -47,7 +47,7 @@ export class StockMovement {
   qty_after: number;
 
   @Column({ type: 'decimal', precision: 10, scale: 2, nullable: true })
-  unit_cost_price: number | null; // এই movement এ প্রতিটার cost কত ছিল
+  unit_cost_price: number | null; // cost per unit for this movement
 
   @Column({ type: 'decimal', precision: 10, scale: 2, nullable: true })
   unit_sale_price: number | null; 
@@ -59,10 +59,10 @@ export class StockMovement {
   reference_type: string | null;
 
   @Column({ type: 'text', nullable: true })
-  note: string | null; // adjustment এর কারণ
+  note: string | null; // reason for adjustment
 
   @Column({ type: 'uuid' })
-  performed_by: string; // vendor user id বা admin id
+  performed_by: string; // vendor user id or admin id
 
   @CreateDateColumn()
   created_at: Date;

@@ -33,7 +33,7 @@ const DealsOfferCard = ({ product }: { product: any }) => {
   const { items } = useSelector((state: any) => state.wishlist);
   const isInWishlist = items?.some((item: any) => item.id === id);
 
-  // ✅ TopDealsCard এর মতো একই discount calculation
+  // Same discount calculation as TopDealsCard
   let oldPrice = Number(price) || 0;
   let newPrice = oldPrice;
 
@@ -139,7 +139,7 @@ const DealsOfferCard = ({ product }: { product: any }) => {
             </h3>
           </Link>
 
-          {/* Price — ✅ TopDealsCard এর মতো newPrice + oldPrice দেখাবে */}
+          {/* Price — shows newPrice + oldPrice like TopDealsCard */}
           <div className="flex items-center gap-2 mt-1">
             <span className="text-base font-bold text-primary-500">
               ৳{newPrice.toLocaleString('en-US')}
@@ -151,7 +151,7 @@ const DealsOfferCard = ({ product }: { product: any }) => {
             )}
           </div>
 
-          {/* Save Badge — ✅ TopDealsCard এর মতো */}
+          {/* Save Badge — same as TopDealsCard */}
           {saveAmount > 0 && (
             <span className="inline-flex w-fit items-center rounded-full bg-green-100 px-3 py-1 text-[11px] font-bold text-green-600">
               Save ৳{saveAmount.toLocaleString('en-US')}

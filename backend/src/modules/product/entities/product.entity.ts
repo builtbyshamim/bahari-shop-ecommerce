@@ -75,8 +75,6 @@ export class Product {
   isActive: boolean;
 
   // ─── Simple Product Support ──────────────────────────────────────
-  // hasVariants = false হলে basePrice/baseStock use হয়
-  // hasVariants = true হলে variants থেকে price/stock নেওয়া হয়
   @Column({ default: false })
   hasVariants: boolean;
 

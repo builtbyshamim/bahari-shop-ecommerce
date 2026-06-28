@@ -168,7 +168,6 @@ export class UsersService {
     return this.userRepository.findOne({ where: { id } });
   }
 
-  // services/users.service.ts এ এই দুটো method update করো
 
   async getProfile(id: string) {
     const user = await this.userRepository.findOne({
@@ -220,12 +219,11 @@ export class UsersService {
 
     await this.userRepository.save(user);
 
-    // password ছাড়া return করো
+    // return without password
     const { password, ...result } = user as any;
     return { message: 'Profile updated successfully', data: result };
   }
 
-  // users.service.ts এ এই method যোগ করো
 
   async changePassword(userId: string, dto: ChangePasswordDto) {
     const user = await this.userRepository.findOne({ where: { id: userId } });
@@ -243,10 +241,10 @@ export class UsersService {
   async setDefaultAddress(userId: string, addressId: string) {
     const repo = this.addressRepo;
 
-    // 1. সব address false
+    // 1. Set all addresses to false
     await repo.update({ user: { id: userId } }, { isDefault: false });
 
-    // 2. selected address true
+    // 2. Set selected address to true
     await repo.update({ id: addressId }, { isDefault: true });
 
     return { message: 'Default address updated' };

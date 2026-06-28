@@ -46,7 +46,7 @@ export class ProductVariant {
   stock: number; // null = unlimited
 
   @Column({ type: 'int', default: 0 })
-  reservedStock: number; // pending orders এ reserved
+  reservedStock: number; // reserved in pending orders
 
   // ─── Physical ─────────────────────────────────────────────────────
   @Column({ type: 'int', nullable: true })

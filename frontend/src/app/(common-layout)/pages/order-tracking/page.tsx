@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import OrderTrackingClient from './OrderTrackingClient';
 
 export const metadata: Metadata = {
-  title: 'Order Tracking — অর্ডার ট্র্যাক করুন',
-  description: 'আপনার ইনভয়েস নম্বর দিয়ে অর্ডারের বর্তমান অবস্থান ট্র্যাক করুন।',
+  title: 'Order Tracking',
+  description: 'Track the current status of your order using your invoice number.',
   openGraph: {
     title: 'Order Tracking | Bahari Shop',
-    description: 'ইনভয়েস নম্বর দিয়ে অর্ডার ট্র্যাক করুন।',
+    description: 'Track your order using your invoice number.',
     url: '/pages/order-tracking',
   },
 };

@@ -18,21 +18,14 @@ async function bootstrap() {
   // 2. CORS Configuration
   app.enableCors({
     origin: [
-      'http://localhost:5173', // Apnar local frontend development port
+      'http://localhost:5173',
       'http://localhost:3000',
-      'https://kcommerce-admin.vercel.app',
-      'https://www.kcommerce-admin.vercel.app',
-      'https://kcommerce-seven.vercel.app',
-      'https://www.kcommerce-seven.vercel.app',
-      'https://bahari-shop-solvexbd.vercel.app',
-      'https://www.bahari-shop-solvexbd.vercel.app',
-      'https://bahari-shop-solvexbd-admin.vercel.app',
-      'https://www.bahari-shop-solvexbd-admin.vercel.app',
-      'https://bahari-shop.solvexbd.com',
-      'https://bahari-shop-admin.solvexbd.com',
+      'https://bahari-shop-admin.vercel.app',
+      'https://bahari-shop.vercel.app',
+      'https://www.bahari-shop.vercel.app',
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    credentials: true, // Jodi cookie ba authorization header pathate chan
+    credentials: true,
   });
 
   // Global prefix
