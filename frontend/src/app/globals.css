@@ -1,0 +1,155 @@
+@import 'tailwindcss';
+:root {
+  --background: #ffffff;
+  --foreground: #ffffff;
+}
+
+@theme {
+  --color-primary-100: #ffe6cc; /* very light */
+  --color-primary-200: #ffcc99;
+  --color-primary-300: #ffb266;
+  --color-primary-400: #ff9933;
+  --color-primary-500: #ea5d0b; /* base */
+  --color-primary-600: #e65c00;
+  --color-primary-700: #cc5200;
+  --color-primary-800: #b34700;
+  --color-black-100: #f5f5f5; /* very light gray, background/light surfaces */
+  --color-black-200: #e0e0e0;
+  --color-black-300: #c2c2c2;
+  --color-black-400: #a3a3a3;
+  --color-black-500: #858585; /* medium gray, text secondary */
+  --color-black-600: #666666; /* regular text */
+  --color-black-700: #4d4d4d;
+  --color-black-800: #333333; /* headings / bold text */
+  --color-black-900: #000000; /* pure black, main text / important elements */
+
+  --color-secondary-base: #737373;
+  --color-info-base: #111217;
+  --color-blue-base: #0064f7;
+  --color-green-base: #03c855;
+  --color-info-muted: #525252;
+  --color-warning-base: #e4a11b;
+  --color-danger-base: #fb545494;
+  --color-success-base: #157f40;
+  --color-neutral-base: #444444;
+  --color-neutral-muted: #19191f;
+  --color-black-base: #181a20;
+  --color-black-solid: #000000;
+  --color-black-muted: #151819;
+  /* Add font family theme variables */
+  --font-sans: var(--font-kanit);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-source-serif);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  background: #fbf8f3;
+  color: #000;
+  font-family: var(--font-inter);
+}
+
+.root-container {
+  @apply max-w-395 mx-auto px-2  md:px-4;
+}
+
+.container {
+  @apply max-w-340 mx-auto px-2  md:px-4;
+}
+
+/* animaton css  */
+/* Shimmer skeleton animation */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* testimonial pagination */
+.testimonial-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #e0e0e0;
+  opacity: 1;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+.testimonial-pagination .swiper-pagination-bullet-active {
+  width: 24px;
+  background: #ff6600;
+}
+
+/* pagination dot base */
+.hero-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #ffcc99;
+  opacity: 1;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+/* active dot */
+.hero-pagination .swiper-pagination-bullet-active {
+  width: 28px;
+  background: #ff6600;
+}

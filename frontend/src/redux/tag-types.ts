@@ -1,0 +1,33 @@
+export const tagTypes = {
+  auth: 'auth',
+  user: 'user',
+  order: 'order',
+  address: 'address',
+  orderSource: 'orderSource',
+  banner: 'banner',
+  pages: 'pages',
+  testimonials: 'testimonials',
+  Review: 'Review',
+  featureType: 'featureType',
+  trendingSearch: 'trendingSearch',
+  gallery: 'gallery',
+  blog: 'blog',
+  blogCategory: 'blogCategory',
+};
+
+export const tagTypesList = [
+  tagTypes.auth,
+  tagTypes.user,
+  tagTypes.order,
+  tagTypes.address,
+  tagTypes.orderSource,
+  tagTypes.banner,
+  tagTypes.pages,
+  tagTypes.testimonials,
+  tagTypes.Review,
+  tagTypes.featureType,
+  tagTypes.trendingSearch,
+  tagTypes.gallery,
+  tagTypes.blog,
+  tagTypes.blogCategory,
+];
